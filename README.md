@@ -5,5 +5,9 @@ Heriot Watt University
 User and privacy-friendly browser extension that will help users to manage their interaction with websites. 
 
 # Requirements
-- [x] vf
+
+## Functional
+- [x] 
 - [ ] fvf
+
+## Non-Functional
