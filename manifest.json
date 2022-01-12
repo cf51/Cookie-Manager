@@ -1,0 +1,12 @@
+{
+"manifest_version": ,
+"name": "",
+"description": "",
+"version": "",
+"icons": "",
+"browser action": {
+    "default_icon": "",
+    "default_popup": "name"
+},
+"permissions": ["activeTab"]
+}
