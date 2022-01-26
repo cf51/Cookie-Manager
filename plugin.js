@@ -1,6 +1,6 @@
 
 
-// 
+// https://developer.chrome.com/docs/extensions/mv3/getstarted/
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({ color });
     console.log('Default background color set to %cgreen', `color: ${color}`);
