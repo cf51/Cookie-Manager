@@ -1,12 +1,10 @@
 {
-"manifest_version": ,
-"name": "",
-"description": "",
-"version": "",
-"icons": "",
-"browser action": {
-    "default_icon": "",
-    "default_popup": "name"
-},
-"permissions": ["activeTab"]
+    "name": "Cookie Manager",
+    "description": "Automated cookie mangager",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "plugin.js"
+      }
 }
+  
