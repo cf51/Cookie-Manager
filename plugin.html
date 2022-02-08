@@ -1,28 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="plugin.css"> 
-        <script src="plugin.js"> </script>
-    </head>
-    <title>Cookie Manager</title>
-    <body onload="checkCookie()">
+
+<head>
+    <link rel="stylesheet" href="plugin.css">
+    <script src="plugin.js"></script>
+</head>
+<title>Cookie Manager</title>
+
+<body onload="checkCookie()">
+    <div class="container">
+        <div class="title_container">
+            <div class="col1">
+                <p>LOGO</p>
+            </div>
+            <button onclick="deleteCookie()">Click me</button>
+        </div>
         
-        <div class="container">
-            <div class="title_container">
-                <div class="col1"><p>LOGO</p></div>
-                <button onclick="setCookie()">Click me</button>
+        <div class="main_container">
+            <div class="col2">
+                <p> MAIN LEFT </p>
             </div>
-            <div class="main_container">
-                <div class="col2"><p> MAIN LEFT </p></div>
-                <div class="col2"><p> MAIN RIGHT </p></div>
-            </div>
-            <div class="footer_container">
-                <div class="col3"><p> I </p></div>
-                <p></p>
-                <div class="col3"><p> JOJO </p></div>
-                <p></p>
-                <div class="col3"><p> JOJO</p></div>
+            <div class="col2">
+                <p> MAIN RIGHT </p>
             </div>
         </div>
-    </body>
+        <div class="footer_container">
+            <div class="col3">
+                <p> I </p>
+            </div>
+            <p></p>
+            <div class="col3">
+                <p> JOJO </p>
+            </div>
+            <p></p>
+            <div class="col3">
+                <p> JOJO</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setCookie(cookieName, cookieValue, expiresDays){
+            const d = new Date();
+            d.setTime(d.getTime() + (expiresDays*24*60*60*1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cookieName){
+            let name = cookieName + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie(){
+            let user = getCookie("username");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                user = prompt("Please enter your name:","");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 30);
+                }
+            }
+        }
+
+        function deleteCookie(){
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert("Cookie has now been deleted"); 
+        }
+    </script>
+</body>
+
 </html>
