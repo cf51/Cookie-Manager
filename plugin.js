@@ -4,17 +4,22 @@
 // https://dev.to/aurelkurtula/basics-of-chrome-extensions-development-part-two-82p 
 // chrome://extensions/
 
+function myfunction(){
+  alert(alert1); 
+}
 
-// This functio should create a cookie when a vistor comes onto the web page
-function setCookie(cookieName, vlaue, days){
+// This function should create a cookie when a vistor comes onto the web page
+function setCookie(cookieName, value, days){
+  alert("At top"); 
   const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  d.setTime(d.getTime() + (days*24*60*60*1000));
   let expires = "expires=" + d.toUTCString();
-  document.cookie = cookieName + "=" + ";" + expires + ";path=/";
+  document.cookie = cookieName + "=" + value + ";" + expires + ";path=/";
+  alert("At bottom"); 
 }
 
 // This function should get the cookie that has been created above 
-function getCookie(name){
+function getCookie(cookieName){
   let name = cookieName + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
