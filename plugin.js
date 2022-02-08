@@ -4,8 +4,13 @@
 // https://dev.to/aurelkurtula/basics-of-chrome-extensions-development-part-two-82p 
 // chrome://extensions/
 
-function fun(){
-  alert("ALERT");
+
+// This functio should create a cookie when a vistor comes onto the web page
+function setCookie(name, vlaue, days){
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = name + "=" + ";" + expires + ";path=/";
 }
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({ color });
