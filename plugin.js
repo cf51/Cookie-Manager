@@ -31,7 +31,17 @@ function getCookie(name){
 }
 
 // This function will check if a cookie is set
-function checkCookie(){}
+function checkCookie(){
+  let user = getCookie("username");
+  if (user != ""){
+    alert("Welcome back " + user);
+  } else {
+    user = promot("Please enter your name:", "");
+    if (user != "" && user != null){
+      setCookie("username", user, 365);
+    }
+  }
+}
 
 
 
