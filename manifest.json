@@ -6,7 +6,11 @@
     "background": {
         "service_worker": "plugin.js"
     },
-    "permissions": ["storage"],
+    "permissions": [
+      "storage",
+      "cookies",
+      "https://*/",
+      "http://*/"],
     "action": {
         "default_popup": "plugin.html",
         "default_icon": {
