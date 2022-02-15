@@ -13,6 +13,16 @@
         ]
       }
     ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "plugin.js"
+        ],
+        "matches": [
+          "https://wordpress.com/"
+        ]
+      }
+    ],
     "background": {
         "service_worker": "plugin.js"
     },
