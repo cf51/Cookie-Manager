@@ -5,6 +5,8 @@
 //document.getElementById("myDiv").style.color = "lightblue";
 
 var delay = 5000; // 5 second delay
+var delay2 = 5000; // 5 second delay
+var delay3 = 5000; // 5 second delay
 
 //document.getElementById("lpc-button").click();
 
@@ -15,8 +17,11 @@ var delay = 5000; // 5 second delay
 console.log("This has worked");
 
 // ANALYTICS OFF
-document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
 setTimeout(function(){
+    console.log("Clicking the customisation button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
+    console.log("Un-clicking the accept button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(3) > input").click();
-    console.log("The delay has worked"); 
+    console.log("Clicking the accept selection button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
 }, delay);
