@@ -12,18 +12,14 @@ var delay3 = 5000; // 5 second delay
 
 //document.getElementsByClassName("a.a8c-cookie-banner-accept-all-button").click();
 
+/*
 // ACCEPT ALL  
 setTimeout(function(){
     //console.log("Clicking the accept all button");
     //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-accept-all-button").click();
-    
 }, delay);
 
-
-//document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-accept-all-button").click();
-console.log("This has worked");
-
-// ANALYTICS OFF
+// ANALYTICS OFF (Essential ONLY)
 setTimeout(function(){
     console.log("Clicking the customisation button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
@@ -33,4 +29,32 @@ setTimeout(function(){
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
 }, delay);
 
-// ANALYTICS OFF
+// ANALYTICS ON
+setTimeout(function(){
+    console.log("Clicking the customisation button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
+    console.log("Clicking the accept selection button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
+}, delay);
+*/
+// ADVERTISING ON 
+setTimeout(function(){
+    console.log("Clicking the customisation button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
+    console.log("Un-clicking the accept button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(3) > input").click();
+    console.log("Clicking the advertising button button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > input").click();
+    console.log("Clicking the accept selection button");
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
+}, delay);
+ 
+
+
+
+
+
+
+
+
+
