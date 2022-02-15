@@ -15,8 +15,12 @@
     ],
     "web_accessible_resources": [
       {
-        "resources": ["script.js"],
-        "matches": ["https://wordpress.com/"]
+        "resources": [
+          "script.js"
+        ],
+        "matches": [
+          "https://wordpress.com/*"
+        ]
       }
     ],
     "background": {

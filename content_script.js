@@ -1,6 +1,6 @@
 var s = document.createElement('script');
-s.src = chrome.extension.getURL('script.js');
-(document.head||document.documentElement).appendChild(s);
+s.src = chrome.runtime.getURL('script.js');
 s.onload = function() {
-    s.parentNode.removeChild(s);
+    this.remove();
 };
+(document.head || document.documentElement).appendChild(s);

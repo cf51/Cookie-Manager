@@ -10,7 +10,7 @@
 
 //document.getElementsByClassName("a.a8c-cookie-banner-accept-all-button").click();
 
-// ACCEPT ALL
+// ACCEPT ALL 
 //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-accept-all-button").click();
 console.log("This has worked");
 
