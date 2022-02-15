@@ -11,6 +11,7 @@ chrome.cookies.getAll({domain: ".mydomain.com"}, function(cookies){
     chrome.cookies.remove({url: "https://" + cookies[i].domain + cookies[i].path, name: cookies[i].name}); 
   }
 });
+
 /*
 function myfunction(){
   alert(alert1); 
