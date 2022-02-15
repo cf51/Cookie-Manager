@@ -4,9 +4,7 @@
 //document.getElementById("myP2").style.color = "blue";
 //document.getElementById("myDiv").style.color = "lightblue";
 
-var delay = 5000; // 5 second delay
-var delay2 = 5000; // 5 second delay
-var delay3 = 5000; // 5 second delay
+var delay = 3000; // 5 second delay
 
 //document.getElementById("lpc-button").click();
 
@@ -36,7 +34,7 @@ setTimeout(function(){
     console.log("Clicking the accept selection button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
 }, delay);
-*/
+
 // ADVERTISING ON (Advertising ON)
 setTimeout(function(){
     console.log("Clicking the customisation button");
@@ -48,7 +46,28 @@ setTimeout(function(){
     console.log("Clicking the accept selection button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
 }, delay);
+*/
+
+// TESTING (Will select and change the colour of the button)
+setTimeout(function(){
+    //Clicking the customisation button
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
+
+    //Changing the analytics button to red
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(3) > strong").style.color = "#ff0000";
+
+    //Changing the advertising button to red
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > strong").style.color = "#ff0000";
+
+    //Clicking the advertising button
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > input").click();
+
+    //Changing the button to red
+    document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").style.backgroundColor = "#ff0000";
+}, delay);
  
+
+
 
 
 
