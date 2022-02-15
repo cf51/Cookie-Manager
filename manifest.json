@@ -3,6 +3,16 @@
     "description": "Automated cookie mangager",
     "version": "1.0",
     "manifest_version": 3,
+    "content_scripts": [
+      {
+        "js": [
+          "plugin.js"
+        ],
+        "matches": [
+          "https://wordpress.com/"
+        ]
+      }
+    ],
     "background": {
         "service_worker": "plugin.js"
     },
