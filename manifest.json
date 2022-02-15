@@ -6,7 +6,7 @@
     "content_scripts": [
       {
         "js": [
-          "plugin.js"
+          "content_script.js"
         ],
         "matches": [
           "https://wordpress.com/"
@@ -15,7 +15,7 @@
     ],
     "web_accessible_resources": [
       {
-        "resources": ["plugin.js"],
+        "resources": ["script.js"],
         "matches": ["https://wordpress.com/"]
       }
     ],
