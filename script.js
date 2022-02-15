@@ -13,7 +13,7 @@ var delay3 = 5000; // 5 second delay
 //document.getElementsByClassName("a.a8c-cookie-banner-accept-all-button").click();
 
 /*
-// ACCEPT ALL  
+// ACCEPT ALL  (Advertising ON, Analytics ON)
 setTimeout(function(){
     //console.log("Clicking the accept all button");
     //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-accept-all-button").click();
@@ -29,7 +29,7 @@ setTimeout(function(){
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
 }, delay);
 
-// ANALYTICS ON
+// ANALYTICS ON (Analytics ON)
 setTimeout(function(){
     console.log("Clicking the customisation button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
@@ -37,7 +37,7 @@ setTimeout(function(){
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").click();
 }, delay);
 */
-// ADVERTISING ON 
+// ADVERTISING ON (Advertising ON)
 setTimeout(function(){
     console.log("Clicking the customisation button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
