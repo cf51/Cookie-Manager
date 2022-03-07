@@ -20,8 +20,8 @@ User and privacy-friendly browser extension that will help users to manage their
 - [ ] Clear cookies at end of session
 - [ ] Download blacklist/whitelist
 ## Non-Functional
-- [ ] Google Chrome compatible
+- [x] Google Chrome compatible
 - [ ] Simple to navigate
 - [ ] Educational prompts
 - [ ] Browser loading time
-- [ ] GDPR compliant
+- [x] GDPR compliant
