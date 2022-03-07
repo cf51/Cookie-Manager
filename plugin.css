@@ -17,17 +17,31 @@ body {
     margin: 0 auto;
     padding:10px;
 }
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:50%; 
+}
+
+.slider.round{
+  display: block;
+  margin-left: 300%;
+  margin-right: 0%;
+  width:100%; 
+}
+
 .title_container {
-    height:100px; 
-    border:2px solid blue;
+    height:140px; 
     width:100%;
     margin-bottom:10px;
     padding:10px;
 }
 
 .sub_title_container {
-  height:55px; 
-  border:2px solid blue;
+  height:50px; 
+  border:2px solid orange;
   width:100%;
   margin-bottom:10px;
   padding:10px;
@@ -66,7 +80,7 @@ body {
 }
 
 .col3:hover{
-  background-color: #111;
+  background-color: grey;
 }
 
 .col2:last-child {

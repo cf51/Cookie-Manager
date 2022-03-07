@@ -8,9 +8,7 @@ var delay = 3000; // 3 second delay
 var delay2 = 5000; 
 var delay3 = 7000; 
 
-
 //document.getElementById("lpc-button").click();
-
 //document.getElementsByClassName("a.a8c-cookie-banner-accept-all-button").click();
 
 /*
