@@ -32,7 +32,7 @@
       "https://*/",
       "http://*/"],
     "action": {
-        "default_popup": "index.html",
+        "default_popup": "plugin.html",
         "default_icon": {
             "16": "/images/favicon16x16.png",
             "32": "/images/favicon32x32.png",
