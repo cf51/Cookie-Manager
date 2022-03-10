@@ -7,6 +7,9 @@
 //This script deals with the functionality within the extnesions user interface
 
 let checked = 0;
+let advertCheck = false; 
+let analyticsCheck = false; 
+let essentialCheck = false; 
 console.log(checked)
 // Listening event 
 chrome.runtime.onInstalled.addListener(() => {
@@ -15,12 +18,31 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 
   document.addEventListener('DOMContentLoaded', function() {
-    var checkButton = document.getElementById('advertisingCheck');
+    var checkButton = document.getElementById('advertCheck');
     checkButton.addEventListener('change', function() {
       if (checkButton.checked){
-        alert("BUTTON HAS BEEN CHECKED"); 
-        checked = checked + 1;  
-        console.log(checked);
+        let advertCheck = true;
+        console.log("Advertising button = " + advertCheck); 
+      }
+    }, false);
+  }, false);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkButton = document.getElementById('analyticsCheck');
+    checkButton.addEventListener('change', function() {
+      if (checkButton.checked){
+        let analyticsCheck = true;
+        console.log("Analytics button = " + analyticsCheck); 
+      }
+    }, false);
+  }, false);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkButton = document.getElementById('essentialCheck');
+    checkButton.addEventListener('change', function() {
+      if (checkButton.checked){
+        let essentialCheck = true;
+        console.log("Essential Only  button = " + essentialCheck); 
       }
     }, false);
   }, false);
