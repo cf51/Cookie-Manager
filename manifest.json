@@ -24,7 +24,7 @@
       }
     ],
     "background": {
-        "service_worker": "plugin.js"
+        "service_worker": "script.js"
     },
     "permissions": [
       "storage",

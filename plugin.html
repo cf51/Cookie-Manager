@@ -3,10 +3,10 @@
 
 <head>
     <link rel="stylesheet" href="plugin.css">
-    <script src="plugin.js"></script>
+    <script src="script.js"></script>
     <!-- <script src="https://kit.fontawesome.com/399019dcc8.js" crossorigin="anonymous"></script> --> 
-    <!-- <p><i class="fa fa-check-circle-o" style="font-size:30px;color:green;"></i>Cookie Manager Active</p>   -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 </head>
 <title>Cookie Manager</title>
 <body>
@@ -14,12 +14,37 @@
         <div class="title_container">
             <img src="images/favicon128x128.png" alt="logo" width="128" height="128" class="center">
         </div>
-        <div class="sub_title_container"> 
-            Extension is active button *Use fontawesome icon*
+        <!--
+        <div class="slidingDiv" id="slidingDivAct"> 
+            &nbsp; &nbsp;<i class="fa fa-check-circle-o" style="font-size:30px;color:green; display:none;"> Cookie Tool Active </i>
         </div>
-        <div class="sub_title_container"> 
-            <label class="form-control">
+        <div class="slidingDiv" id="slidingDivDis"> 
+            &nbsp; &nbsp;<i class="fa fa-check-circle-o" style="font-size:30px;color:red;"> Cookie Tool Disabled </i>
+        </div>
+         -->
+        <ul>
+            <li>
+                <input id="activateCookieManager" type="checkbox" class="switch" style="color:green">
+                <label for="activateCookieManager">Activate Cookie Manager</label>
+            </li>  
+            <li>
+              <input id="allowAdvertisingCookies" type="checkbox" class="switch" disabled>
+              <label for="allowAdvertisingCookies">Allow Advertising Cookies</label>
+            </li>
+            <li>
+              <input id="allowAnalyticCookies" type="checkbox" class="switch" disabled>
+              <label for="allowAnalyticCookies">Allow Analytic Cookies</label>
+            </li>
+            <li>
+                <input id="essentialOnlyCookies" type="checkbox" class="switch" disabled>
+                <label for="essentialOnlyCookies">Essential only Cookies</label>
+              </li>
+          </ul>
+        <!--
+        <div class="div"> 
+            <label>
                 <input type="checkbox" id="advertCheck"><span class="slider round"></span>
+                This is the checkbox label
             </label>
         </div>
         <div class="sub_title_container"> 
@@ -27,11 +52,61 @@
                 <input type="checkbox" id="analyticsCheck"><span class="slider round"></span>
             </label>
         </div>
-        <div class="sub_title_container"> 
-            <label class="form-control">
-                <input type="checkbox" id="essentialCheck"><span class="slider round"></span>
-            </label>
-        </div>        
+    -->
+    <br>
+    <!--
+		<label class="toggle" for="uniqueID">
+			<input type="checkbox" class="toggle__input" id="uniqueID" />
+			<span class="toggle-track">
+				<span class="toggle-indicator">
+					This check mark is optional	
+					<span class="checkMark">
+						<svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+							<path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+						</svg>
+					</span>
+				</span>
+			</span>
+            &nbsp; Advertising Cookies
+		</label>
+    
+    <br>
+        <label class="toggle" for="uniqueID">
+			<input type="checkbox" class="toggle__input" id="uniqueID" />
+			<span class="toggle-track">
+				<span class="toggle-indicator">
+				</span>
+			</span>
+            &nbsp; Analytics Cookies
+		</label>
+<br>
+        <label class="toggle" for="uniqueID">
+			<input type="checkbox" class="toggle__input" id="uniqueID" />
+			<span class="toggle-track">
+				<span class="toggle-indicator">
+				</span>
+			</span>
+            &nbsp; Essential Only Cookies
+		</label>
+
+		<label class="toggle" for="disabledDemo">
+			<input type="checkbox" class="toggle__input" id="disabledDemo" disabled />
+			<span class="toggle-track">
+				<span class="toggle-indicator">
+					<span class="checkMark">
+						<svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+							<path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+						</svg>
+					</span>
+				</span>
+			</span>
+			&nbsp; Disabled toggle label
+		</label>
+    --> 
+	</div>
+</div>
+
+        
         <div class="footer_container">
             <div class="col3">
                 <p>PROFILE</p>

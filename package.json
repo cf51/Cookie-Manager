@@ -1,0 +1,19 @@
+{
+  "name": "cookie-manager",
+  "version": "1.0.0",
+  "description": "4th Year Dissertation Project Heriot Watt University",
+  "main": "content_script.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cf51/Cookie-Manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cf51/Cookie-Manager/issues"
+  },
+  "homepage": "https://github.com/cf51/Cookie-Manager#readme"
+}
