@@ -75,6 +75,18 @@ chrome.runtime.onInstalled.addListener(() => {
   function flagChecker(){
       alert(activeFlag); 
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkButton = document.getElementById('darkMode');
+    checkButton.addEventListener('change', function() {
+      if (checkButton.checked){
+        let analyticsCheck = true;
+        alert("Dark mode button");
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
+    }, false);
+  }, false);
 //document.getElementById("lpc-button").click();
 //document.getElementsByClassName("a.a8c-cookie-banner-accept-all-button").click();
 
