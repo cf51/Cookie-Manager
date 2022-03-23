@@ -22,7 +22,7 @@ body {
 
 .mid-section{
   height:210px; 
-  border: 3px solid green; 
+  border: 3px solid WHITE; 
 }
 
 form input[type="submit"]{
@@ -103,7 +103,7 @@ input {
   width: 100%;
   padding:10px;
   display: table;
-  border: 3px solid blue; 
+  /*border: 3px solid blue; */ 
 }
 .col1 {
     border:2px solid red;
