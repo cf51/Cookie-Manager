@@ -1,3 +1,5 @@
+/* #f37005 - Orange colour*/ 
+
 body {
     background-color: white;
     padding: 1px;
@@ -204,7 +206,7 @@ input:checked + .slider:before {
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type=checkbox],
 input[type=radio] {
-    --active: green;
+    --active: orange;
     --active-inner: #fff;
     --focus: 2px rgba(39, 94, 254, 0.3);
     --border: #bbc1e1;
@@ -496,7 +498,7 @@ html {
 }
 
 .button-77:before {
-  background-color: rgba(249, 58, 19, .32);
+  background-color: rgba(249, 58, 19, .32); 
   content: "";
   display: block;
   height: 100%;
