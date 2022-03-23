@@ -6,7 +6,7 @@ body {
     padding: 1px;
     margin: 1px;
     width: 300px;
-    height:495px;
+    height:505px;
     border: 5px solid black;  
     transition: all linear 5s;
 }
@@ -16,15 +16,12 @@ body {
 .container {
     width:100%;
     max-width:450px;
-    height:485px;  
+    height:495px;  
     margin: 0 auto;
     padding:0px;
-    border: 3px solid red;  
+    /*border: 3px solid red; */ 
 }
 
-.main-container{
-  border: 3px solid green;
-}
 .contact {
   background-color: red;
   width: 30%;
@@ -48,8 +45,8 @@ body {
 }
 
 .mid-section{
-  height:250px; 
-  border: 3px solid green; 
+  height:260px; 
+  border: 3px solid white  
 }
 
 .center{
@@ -71,7 +68,7 @@ body {
     width:100%;
     margin-bottom:10px;
     padding:10px;
-    border: 3px solid yellow;  
+    /*border: 3px solid yellow;   */ 
 }
 
 .sub_title_container {
@@ -369,7 +366,7 @@ ul {
 ul li {
   margin: 16px 0;
   position: relative;
-  border: 2px solid black; 
+  /*border: 2px solid black; */ 
 }
 
 html {
@@ -576,101 +573,7 @@ html {
   height:5px;
 }
 
-:root {
-  --input-color: #99A3BA;
-  --input-border: #CDD9ED;
-  --input-background: #fff;
-  --input-placeholder: #CBD1DC;
-  --input-border-focus: black;
-  --group-color: var(--input-color);
-  --group-border: var(--input-border);
-  --group-background: #EEF4FF;
-  --group-color-focus: #fff;
-  --group-border-focus: var(--input-border-focus);
-  --group-background-focus: #f37005;
-}
-
-.form-field {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 8px 16px;
-  line-height: 25px;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: inherit;
-  border-radius: 6px;
-  -webkit-appearance: none;
-  color: var(--input-color);
-  border: 1px solid var(--input-border);
-  background: var(--input-background);
-  transition: border 0.3s ease;
-}
-.form-field::-moz-placeholder {
-  color: var(--input-placeholder);
-}
-.form-field:-ms-input-placeholder {
-  color: var(--input-placeholder);
-}
-.form-field::placeholder {
-  color: var(--input-placeholder);
-}
-.form-field:focus {
-  outline: none;
-  border-color: var(--input-border-focus);
-}
-
-.form-group {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height:100%; 
-}
-.form-group > span,
-.form-group .form-field {
-  white-space: nowrap;
-  display: block;
-}
-.form-group > span:not(:first-child):not(:last-child),
-.form-group .form-field:not(:first-child):not(:last-child) {
-  border-radius: 0;
-}
-.form-group > span:first-child,
-.form-group .form-field:first-child {
-  border-radius: 6px 0 0 6px;
-}
-.form-group > span:last-child,
-.form-group .form-field:last-child {
-  border-radius: 0 6px 6px 0;
-}
-.form-group > span:not(:first-child),
-.form-group .form-field:not(:first-child) {
-  margin-left: -1px;
-}
-.form-group .form-field {
-  position: relative;
-  z-index: 1;
-  flex: 1 1 auto;
-  width: 1%;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.form-group > span {
-  text-align: center;
-  padding: 8px 12px;
-  font-size: 14px;
-  line-height: 25px;
-  color: var(--group-color);
-  background: var(--group-background);
-  border: 1px solid var(--group-border);
-  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
-}
-.form-group:focus-within > span {
-  color: var(--group-color-focus);
-  background: var(--group-background-focus);
-  border-color: var(--group-border-focus);
-}
-
+/* STYLING FOR THE DROP DOWN MENU ON HOME PAGE *****************************************************************************************/ 
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -688,3 +591,62 @@ body .form-group {
 body .form-group:not(:last-child) {
   margin-bottom: 32px;
 }
+
+* {
+  box-sizing: border-box;
+}
+.select {
+  position: relative;
+  min-width: 200px;
+}
+.select svg {
+  position: absolute;
+  right: 25px;
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 6px;
+  stroke-width: 2px;
+  stroke: #9098a9;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.select select {
+  -webkit-appearance: none;
+  padding: 7px 40px 7px 12px;
+  width: 100%;
+  border: 1px solid #e8eaed;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 150ms ease;
+}
+.select select:required:invalid {
+  color: #5a667f;
+}
+.select select option {
+  color: #223254;
+}
+.select select option[value=""][disabled] {
+  display: none;
+}
+.select select:focus {
+  outline: none;
+  border-color: #07f;
+  box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+}
+.select select:hover + svg {
+  stroke: #f37005; 
+}
+.sprites {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}
+/*************************************************************************************************************************/ 

@@ -32,6 +32,26 @@
                     <input id="essentialOnlyCookies" type="checkbox" class="switch" disabled>
                     <label for="essentialOnlyCookies">Essential only Cookies</label>
                 </li>
+                
+                <label class="select" for="slct">
+                    <select id="slct" required="required">
+                    <option value="" disabled="disabled" selected="selected">Select Mode:</option>
+                    <option value="#">Max Privacy Mode</option>
+                    <option value="#">Shopping Mode</option>
+                    <option value="#">Open Mode</option>
+
+                    </select>
+                    <svg>
+                    <use xlink:href="#select-arrow-down"></use>
+                    </svg>
+                </label>
+                <!-- SVG Sprites-->
+                <svg class="sprites">
+                    <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                    <polyline points="1 1 5 5 9 1"></polyline>
+                    </symbol>
+                </svg>
+                <!--
                 <li>
                     <div class="custom-select" style="width:200px;">
                         <select>
@@ -42,6 +62,7 @@
                         </select>
                     </div>
                 </li>
+            --->
             </ul>
             
         </div>
