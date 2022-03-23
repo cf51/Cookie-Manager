@@ -478,7 +478,7 @@ html {
   flex-direction: row;
   flex-shrink: 0;
   font-family: Eina01,sans-serif;
-  font-size: 10px;
+  font-size: 10px; /* Size of the text on the button */ 
   font-weight: 800;
   justify-content: center;
   line-height: 24px;
@@ -486,7 +486,7 @@ html {
   min-height: 34px;
   outline: none;
   overflow: visible;
-  padding: 9.5px 20px;
+  padding: 9.5px 20px; /* Height and width of the button */ 
   pointer-events: auto;
   position: relative;
   text-align: center;
@@ -564,16 +564,9 @@ html {
   cursor: default;
   opacity: .24;
 }
-.myDIV {
-  height: 1px;
-  transition: height 2s;
-}
-
-.myDIV:hover {
-  height:5px;
-}
 
 /* STYLING FOR THE DROP DOWN MENU ON HOME PAGE *****************************************************************************************/ 
+
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
