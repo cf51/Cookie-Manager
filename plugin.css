@@ -1,12 +1,14 @@
 /* #f37005 - Orange colour*/ 
 
 body {
-    background-color: white;
+    /*background: #F5F9FF; */
+    background: white;
     padding: 1px;
     margin: 1px;
     width: 300px;
-    height:455px;
+    height:495px;
     border: 5px solid black;  
+    transition: all linear 5s;
 }
 * {
     box-sizing: border-box;
@@ -14,26 +16,41 @@ body {
 .container {
     width:100%;
     max-width:450px;
-    height:445px;  
+    height:485px;  
     margin: 0 auto;
     padding:0px;
-    border: 3px solid red; 
+    border: 3px solid red;  
+}
+
+.main-container{
+  border: 3px solid green;
+}
+.contact {
+  background-color: red;
+  width: 30%;
+  float: left;
+  transition:1s linear;
+}
+
+.div {
+  background-color: blue;
+  width: 70%;
+  float: right;
+  transition:1s linear;
+}
+
+.contact:hover {
+  width: 40%;
+}
+
+.contact:hover + .div{
+  width: 60%;
 }
 
 .mid-section{
-  height:210px; 
-  border: 3px solid WHITE; 
+  height:250px; 
+  border: 3px solid green; 
 }
-
-form input[type="submit"]{
-  width:235px;
-  height: 30px;
-}
-form input[type="url"]{
-  width:235px;
-  height:30px; 
-}
-
 
 .center{
   display: block;
@@ -54,7 +71,7 @@ form input[type="url"]{
     width:100%;
     margin-bottom:10px;
     padding:10px;
-    border: 3px solid yellow; 
+    border: 3px solid yellow;  
 }
 
 .sub_title_container {
@@ -103,7 +120,8 @@ input {
   width: 100%;
   padding:10px;
   display: table;
-  /*border: 3px solid blue; */ 
+  border-top: 5px solid black;
+  line-height: 1px;
 }
 .col1 {
     border:2px solid red;
@@ -548,4 +566,125 @@ html {
 .button-77:disabled {
   cursor: default;
   opacity: .24;
+}
+.myDIV {
+  height: 1px;
+  transition: height 2s;
+}
+
+.myDIV:hover {
+  height:5px;
+}
+
+:root {
+  --input-color: #99A3BA;
+  --input-border: #CDD9ED;
+  --input-background: #fff;
+  --input-placeholder: #CBD1DC;
+  --input-border-focus: black;
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #EEF4FF;
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #f37005;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+}
+.form-field::-moz-placeholder {
+  color: var(--input-placeholder);
+}
+.form-field:-ms-input-placeholder {
+  color: var(--input-placeholder);
+}
+.form-field::placeholder {
+  color: var(--input-placeholder);
+}
+.form-field:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height:100%; 
+}
+.form-group > span,
+.form-group .form-field {
+  white-space: nowrap;
+  display: block;
+}
+.form-group > span:not(:first-child):not(:last-child),
+.form-group .form-field:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.form-group > span:first-child,
+.form-group .form-field:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.form-group > span:last-child,
+.form-group .form-field:last-child {
+  border-radius: 0 6px 6px 0;
+}
+.form-group > span:not(:first-child),
+.form-group .form-field:not(:first-child) {
+  margin-left: -1px;
+}
+.form-group .form-field {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.form-group > span {
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--group-color);
+  background: var(--group-background);
+  border: 1px solid var(--group-border);
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+.form-group:focus-within > span {
+  color: var(--group-color-focus);
+  background: var(--group-background-focus);
+  border-color: var(--group-border-focus);
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+body .form-group {
+  max-width: 360px;
+}
+body .form-group:not(:last-child) {
+  margin-bottom: 32px;
 }
