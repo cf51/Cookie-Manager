@@ -17,12 +17,12 @@ body {
     height:445px;  
     margin: 0 auto;
     padding:0px;
-    /*border: 3px solid red; */ 
+    border: 3px solid red; 
 }
 
 .mid-section{
   height:210px; 
-  /*border: 3px solid green; */ 
+  border: 3px solid green; 
 }
 
 form input[type="submit"]{
@@ -54,7 +54,7 @@ form input[type="url"]{
     width:100%;
     margin-bottom:10px;
     padding:10px;
-    /*border: 3px solid yellow; */ 
+    border: 3px solid yellow; 
 }
 
 .sub_title_container {
@@ -103,7 +103,7 @@ input {
   width: 100%;
   padding:10px;
   display: table;
-  /*border: 3px solid blue; */ 
+  border: 3px solid blue; 
 }
 .col1 {
     border:2px solid red;
