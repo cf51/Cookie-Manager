@@ -14,6 +14,7 @@ let advertCheck = false;
 let analyticsCheck = false; 
 let essentialCheck = false; 
 console.log(checked)
+
 // Listening event 
 
 /*
@@ -43,6 +44,101 @@ chrome.runtime.onInstalled.addListener(() => {
     }, false);
   }, false);
 
+  // EVENT HANDLER FOR SHOPPING MODE ACTIVATED
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkInputForm = document.getElementById('slct');
+    checkInputForm.addEventListener('change', function() {
+      if (checkInputForm.value == "#2"){
+        document.getElementById("activateCookieManager").disabled = false;
+        document.getElementById("activateCookieManager").checked = true;
+
+        document.getElementById("allowAdvertisingCookies").disabled = false;
+        document.getElementById("allowAdvertisingCookies").checked = true;
+
+        document.getElementById("allowAnalyticCookies").disabled = true;
+        document.getElementById("allowAnalyticCookies").checked = false;
+
+        document.getElementById("essentialOnlyCookies").disabled = true; 
+        document.getElementById("essentialOnlyCookies").checked = false; 
+
+      }
+    }, false);
+  }, false);
+
+  // EVENT HANDLER FOR MAX PRIVACY MODE ACTIVATED
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkInputForm = document.getElementById('slct');
+    checkInputForm.addEventListener('change', function() {
+      if (checkInputForm.value == "#1"){
+        document.getElementById("activateCookieManager").disabled = false;
+        document.getElementById("activateCookieManager").checked = true;
+        document.getElementById("allowAdvertisingCookies").disabled = true;
+        document.getElementById("allowAdvertisingCookies").checked = false;
+
+        document.getElementById("allowAnalyticCookies").disabled = true;
+        document.getElementById("allowAnalyticCookies").checked = false;
+
+        document.getElementById("essentialOnlyCookies").disabled = false; 
+        document.getElementById("essentialOnlyCookies").checked = true; 
+
+      }
+    }, false);
+  }, false);
+
+    // EVENT HANDLER FOR OPEN MODE ACTIVATED
+    document.addEventListener('DOMContentLoaded', function() {
+      var checkInputForm = document.getElementById('slct');
+      checkInputForm.addEventListener('change', function() {
+        if (checkInputForm.value == "#3"){
+          document.getElementById("activateCookieManager").disabled = false;
+          document.getElementById("activateCookieManager").checked = true;
+
+          document.getElementById("allowAdvertisingCookies").disabled = false;
+          document.getElementById("allowAdvertisingCookies").checked = true;
+  
+          document.getElementById("allowAnalyticCookies").disabled = false;
+          document.getElementById("allowAnalyticCookies").checked = true;
+  
+          document.getElementById("essentialOnlyCookies").disabled = true; 
+          document.getElementById("essentialOnlyCookies").checked = false; 
+  
+        }
+      }, false);
+    }, false);
+
+      // EVENT HANDLER FOR DARK MODE/LIGHT MODE ACTIVATED
+      document.addEventListener('DOMContentLoaded', function() {
+      var checkThemeForm = document.getElementById('darkMode');
+      checkThemeForm.addEventListener('change', function() {
+        if (checkThemeForm.value == "#2"){
+          var element = document.body;
+          element.classList.toggle("dark-mode");
+        }
+        else if(checkThemeForm.value =="#1") {
+          var element = document.body;
+          element.classList.toggle("light-mode");
+        }
+      }, false);
+    }, false);
+
+    //main.js
+
+    // USE THIS LOCAL STORAGE STUFF https://dev.to/mattmarquise/implement-dark-mode-on-your-website-5c5a#demo
+    /*
+function darkmode() {
+  const wasDarkmode = localStorage.getItem('darkmode') === 'true';
+  localStorage.setItem('darkmode', !wasDarkmode);
+  const element = document.body;
+  element.classList.toggle('dark-mode', !wasDarkmode);
+}
+
+function onload() {
+  document.body.classList.toggle('dark-mode', localStorage.getItem('darkmode') === 'true');
+}
+
+onload="onload()"
+*/ 
+
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('analyticsCheck');
     checkButton.addEventListener('change', function() {
@@ -70,6 +166,8 @@ chrome.runtime.onInstalled.addListener(() => {
       }
     }, false);
   }, false);
+
+  
 
 
   function flagChecker(){
