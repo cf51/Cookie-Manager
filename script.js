@@ -4,7 +4,8 @@
 //document.getElementById("myP2").style.color = "blue";
 //document.getElementById("myDiv").style.color = "lightblue";
 
-var delay = 3000; // 3 second delay
+var delay = 100; 
+var delay1 = 3000; // 3 second delay
 var delay2 = 5000; 
 var delay3 = 7000; 
 
@@ -15,6 +16,7 @@ let analyticsCheck = false;
 let essentialCheck = false; 
 console.log(checked)
 
+localStorage.setItem('activeFlag', 'false'); 
 // Listening event 
 
 /*
@@ -25,20 +27,28 @@ chrome.runtime.onInstalled.addListener(() => {
 
   */ 
 
+  //localStorage.setItem("activeFlag", "true"); 
+
+
+// ACTIVATE COOKIE MANAGER BUTTON
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('activateCookieManager');
     checkButton.addEventListener('change', function() {
       if (checkButton.checked){
-        activeFlag = activeFlag + 1;
+        //activeFlag = activeFlag + 1;
         document.getElementById("allowAdvertisingCookies").disabled = false;
         document.getElementById("allowAnalyticCookies").disabled = false;
         document.getElementById("essentialOnlyCookies").disabled = false; 
+        localStorage.setItem('activeFlag', 'true'); 
         //alert(activeFlag); 
+        localStorage.setItem('activeFlag', 'true');
+        //alert("Flag is "+ localStorage.getItem('activeFlag')); 
       }
       else{
         document.getElementById("allowAdvertisingCookies").disabled = true;
         document.getElementById("allowAnalyticCookies").disabled = true;
         document.getElementById("essentialOnlyCookies").disabled = true; 
+        //localStorage.setItem('activeFlag', 'false'); 
         //activeFlag = 0; 
       }
     }, false);
@@ -113,42 +123,32 @@ chrome.runtime.onInstalled.addListener(() => {
         if (checkThemeForm.value == "#2"){
           var element = document.body;
           element.classList.toggle("dark-mode");
+          //localStorage.setItem("themeFlag", "dark"); 
         }
         else if(checkThemeForm.value =="#1") {
           var element = document.body;
           element.classList.toggle("light-mode");
+          //localStorage.setItem("themeFlag", "light"); 
         }
       }, false);
     }, false);
 
-    //main.js
+// USE THIS LOCAL STORAGE STUFF https://dev.to/mattmarquise/implement-dark-mode-on-your-website-5c5a#demo
 
-    // USE THIS LOCAL STORAGE STUFF https://dev.to/mattmarquise/implement-dark-mode-on-your-website-5c5a#demo
-    /*
-function darkmode() {
-  const wasDarkmode = localStorage.getItem('darkmode') === 'true';
-  localStorage.setItem('darkmode', !wasDarkmode);
-  const element = document.body;
-  element.classList.toggle('dark-mode', !wasDarkmode);
-}
-
-function onload() {
-  document.body.classList.toggle('dark-mode', localStorage.getItem('darkmode') === 'true');
-}
-
-onload="onload()"
-*/ 
-
+// EVENT HANDLER ANALYTICS BUTTON
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('analyticsCheck');
     checkButton.addEventListener('change', function() {
       if (checkButton.checked){
-        let analyticsCheck = true;
-        console.log("Analytics button = " + analyticsCheck); 
+        //let analyticsCheck = true;
+        //console.log("Analytics button = " + analyticsCheck); 
+        //alert("This works"); 
+        //alert(localStorage.getItem("flag"));
       }
     }, false);
   }, false);
 
+  // EVENT HANDLER FOR ESSENTIAL ONLY COOKIES BUTTON
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('essentialOnlyCookies');
     checkButton.addEventListener('change', function() {
@@ -168,12 +168,6 @@ onload="onload()"
   }, false);
 
   
-
-
-  function flagChecker(){
-      alert(activeFlag); 
-  }
-
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('darkMode');
     checkButton.addEventListener('change', function() {
@@ -227,30 +221,37 @@ setTimeout(function(){
 }, delay);
 
 */ 
+/*
 // DEMO MODE
 // TESTING (Will select and change the colour of the button)
 setTimeout(function(){
     //Clicking the customisation button
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
-    alert(activeFlag); 
-}, delay);
+    //alert(activeFlag); 
+}, delay1);
 
 setTimeout(function(){
      //Changing the advertising button to red
      //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > strong").style.color = "#ff0000";
      //Clicking the advertising button
      document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > input").click();
-     alert(activeFlag); 
+     //alert(activeFlag); 
 }, delay2);
 
-setTimeout(function(){
+  setTimeout(function(){
     //Changing the button to red
-    if (activeFlag == 1){
         document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").style.backgroundColor = "#ff0000";
-    }
-    else{
         document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > a").style.backgroundColor = "#38df11";
-    }
 }, delay3);
- 
 
+/*
+function fun(){
+
+}
+
+setTimeout(function(){
+  if (localStorage.getItem("activeFlag") === 'true') {
+    alert("The flag is not active boy"); 
+  }
+}, delay);
+*/ 
