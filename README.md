@@ -11,7 +11,7 @@ User and privacy-friendly browser extension that will help users to manage their
 - [x] Auto reject/accept cookies
 - [x] Blacklist URL
 - [x] Whitelist URL
-- [ ] Delete blacklist/whitelist
+- [x] Delete blacklist/whitelist
 - [x] Light/Dark theme
 - [ ] Display number of cookies rejected 
 - [x] Disable tool

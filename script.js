@@ -16,7 +16,8 @@ let analyticsCheck = false;
 let essentialCheck = false; 
 console.log(checked)
 
-localStorage.setItem('activeFlag', 'false'); 
+//localStorage.setItem('activeFlag', 'false');
+//alert("FLAG: " + localStorage.getItem("activeFlag"));
 // Listening event 
 
 /*
@@ -29,30 +30,72 @@ chrome.runtime.onInstalled.addListener(() => {
 
   //localStorage.setItem("activeFlag", "true"); 
 
-
+//alert("The flag is " + localStorage.getItem("activeFlag"));
 // ACTIVATE COOKIE MANAGER BUTTON
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('activateCookieManager');
     checkButton.addEventListener('change', function() {
       if (checkButton.checked){
+        localStorage.setItem("activeFlag", "true"); 
+        //alert("the button is true"); 
         //activeFlag = activeFlag + 1;
-        document.getElementById("allowAdvertisingCookies").disabled = false;
-        document.getElementById("allowAnalyticCookies").disabled = false;
-        document.getElementById("essentialOnlyCookies").disabled = false; 
-        localStorage.setItem('activeFlag', 'true'); 
+        //document.getElementById("allowAdvertisingCookies").disabled = false;
+        //document.getElementById("allowAnalyticCookies").disabled = false;
+        //document.getElementById("essentialOnlyCookies").disabled = false; 
+        //document.getElementById("activateCookieManager").checked = true; 
+        //localStorage.setItem('activeFlag', 'true'); 
         //alert(activeFlag); 
-        localStorage.setItem('activeFlag', 'true');
+        //localStorage.setItem('activeFlag', 'true');
         //alert("Flag is "+ localStorage.getItem('activeFlag')); 
+       // alert("Flag is "+ localStorage.getItem('activeFlag')); 
       }
       else{
-        document.getElementById("allowAdvertisingCookies").disabled = true;
-        document.getElementById("allowAnalyticCookies").disabled = true;
-        document.getElementById("essentialOnlyCookies").disabled = true; 
+        //document.getElementById("allowAdvertisingCookies").disabled = true;
+        //document.getElementById("allowAnalyticCookies").disabled = true;
+        //document.getElementById("essentialOnlyCookies").disabled = true; 
         //localStorage.setItem('activeFlag', 'false'); 
         //activeFlag = 0; 
       }
     }, false);
   }, false);
+  
+  //alert("The flag is " + localStorage.getItem("activeFlag"));
+// ACTIVATE COOKIE MANAGER BUTTON
+document.addEventListener('DOMContentLoaded', function() {
+  var checkButton = document.getElementById('activateCookieManager');
+  checkButton.addEventListener('change', function() {
+    if (checkButton.checked == false){
+      localStorage.setItem("activeFlag", "false");  
+      //alert("the button is now false")
+    }
+   
+  }, false);
+}, false);
+
+  document.addEventListener('DOMContentLoaded', function() {
+      if (localStorage.getItem("activeFlag") === "true"){
+        document.getElementById("activateCookieManager").checked = true; 
+        alert("The flag is true"); 
+        //alert("inside of the loop"); 
+      }
+      else{
+        //alert("the flag is false"); 
+      }
+    }, false);
+  
+//alert("FLAG: " + localStorage.getItem("activeFlag"));
+  //alert("The flag is " + localStorage.getItem("activeFlag"));
+  // EVENT HANDLER FOR CHECKING IF THE FLAGS WORK
+  /*
+      if (localStorage.getItem("activeFlag") === "true"){
+        //alert("Flag is THIS BTW "+ localStorage.getItem('activeFlag')); 
+        document.getElementById("essentialOnlyCookies").checked = true; 
+        alert("Inside of this loop"); 
+      }
+      */ 
+
+
+
 
   // EVENT HANDLER FOR SHOPPING MODE ACTIVATED
   document.addEventListener('DOMContentLoaded', function() {
