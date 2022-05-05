@@ -221,20 +221,24 @@ setTimeout(function(){
 }, delay);
 
 */ 
-/*
+
 // DEMO MODE
 // TESTING (Will select and change the colour of the button)
 setTimeout(function(){
     //Clicking the customisation button
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
+    //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").style.backgroundColor = "#38df11";
     //alert(activeFlag); 
 }, delay1);
 
 setTimeout(function(){
      //Changing the advertising button to red
-     //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > strong").style.color = "#ff0000";
+     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > strong").style.color = "#ff0000";
      //Clicking the advertising button
-     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > input").click();
+     //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(4) > input").click();
+     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-options-selection > p:nth-child(3) > strong").style.color = "#38df11";
+     
+     
      //alert(activeFlag); 
 }, delay2);
 

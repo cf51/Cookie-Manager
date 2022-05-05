@@ -7,21 +7,21 @@ User and privacy-friendly browser extension that will help users to manage their
 # Requirements
 
 ## Functional
-- [ ] Select level of cookie protection
-- [ ] Auto reject/accept cookies
-- [ ] Blacklist URL
-- [ ] Whitelist URL
+- [x] Select level of cookie protection
+- [x] Auto reject/accept cookies
+- [x] Blacklist URL
+- [x] Whitelist URL
 - [ ] Delete blacklist/whitelist
-- [ ] Light/Dark theme
+- [x] Light/Dark theme
 - [ ] Display number of cookies rejected 
-- [ ] Disable tool
+- [x] Disable tool
 - [ ] Show type of cookies blocked
-- [ ] Select browser mode
+- [x] Select browser mode
 - [ ] Clear cookies at end of session
-- [ ] Download blacklist/whitelist
+- [x] Download blacklist/whitelist
 ## Non-Functional
 - [x] Google Chrome compatible
-- [ ] Simple to navigate
-- [ ] Educational prompts
-- [ ] Browser loading time
+- [x] Simple to navigate
+- [x] Educational prompts
+- [x] Browser loading time
 - [x] GDPR compliant
