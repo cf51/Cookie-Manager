@@ -16,7 +16,12 @@ let analyticsCheck = false;
 let essentialCheck = false; 
 console.log(checked)
 
-//localStorage.setItem('activeFlag', 'false');
+/*
+localStorage.setItem('activeFlag', 'false');
+localStorage.setItem('essentialFlag', 'false');
+localStorage.setItem('advertisingFlag', 'false');
+localStorage.setItem('analyticFlag', 'false');
+*/ 
 //alert("FLAG: " + localStorage.getItem("activeFlag"));
 // Listening event 
 
@@ -28,74 +33,145 @@ chrome.runtime.onInstalled.addListener(() => {
 
   */ 
 
-  //localStorage.setItem("activeFlag", "true"); 
-
-//alert("The flag is " + localStorage.getItem("activeFlag"));
-// ACTIVATE COOKIE MANAGER BUTTON
+// ACTIVATE COOKIE MANAGER BUTTON EVENT
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('activateCookieManager');
     checkButton.addEventListener('change', function() {
       if (checkButton.checked){
         localStorage.setItem("activeFlag", "true"); 
-        //alert("the button is true"); 
-        //activeFlag = activeFlag + 1;
-        //document.getElementById("allowAdvertisingCookies").disabled = false;
-        //document.getElementById("allowAnalyticCookies").disabled = false;
-        //document.getElementById("essentialOnlyCookies").disabled = false; 
-        //document.getElementById("activateCookieManager").checked = true; 
-        //localStorage.setItem('activeFlag', 'true'); 
-        //alert(activeFlag); 
-        //localStorage.setItem('activeFlag', 'true');
-        //alert("Flag is "+ localStorage.getItem('activeFlag')); 
-       // alert("Flag is "+ localStorage.getItem('activeFlag')); 
+        document.getElementById("allowAdvertisingCookies").disabled = false;
+        document.getElementById("allowAnalyticCookies").disabled = false;
+        document.getElementById("essentialOnlyCookies").disabled = false; 
+        
+        console.log("Active Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("activeFlag"));
+        //alert("Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("activeFlag")); 
       }
       else{
-        //document.getElementById("allowAdvertisingCookies").disabled = true;
-        //document.getElementById("allowAnalyticCookies").disabled = true;
-        //document.getElementById("essentialOnlyCookies").disabled = true; 
-        //localStorage.setItem('activeFlag', 'false'); 
-        //activeFlag = 0; 
+        localStorage.setItem("activeFlag", "false");
+        document.getElementById("allowAdvertisingCookies").disabled = true;
+        document.getElementById("allowAnalyticCookies").disabled = true;
+        document.getElementById("essentialOnlyCookies").disabled = true; 
+
+        console.log("Active Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("activeFlag"));
+        //alert("Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("activeFlag")); 
       }
     }, false);
   }, false);
-  
-  //alert("The flag is " + localStorage.getItem("activeFlag"));
-// ACTIVATE COOKIE MANAGER BUTTON
+
+
+  // ACTIVE ANALYTICS BUTTON EVENT
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkButton = document.getElementById('allowAnalyticCookies');
+    checkButton.addEventListener('change', function() {
+      if (checkButton.checked){
+        localStorage.setItem("analyticFlag", "true");
+        console.log("Analytics Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("analyticFlag"));
+      }
+      else{
+        localStorage.setItem("analyticFlag", "false");
+        console.log("Analytics Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("analyticFlag"));
+      }
+    }, false);
+  }, false);
+
+// ACTIVE ADVERTISING BUTTON EVENT 
 document.addEventListener('DOMContentLoaded', function() {
-  var checkButton = document.getElementById('activateCookieManager');
+  var checkButton = document.getElementById('allowAdvertisingCookies');
   checkButton.addEventListener('change', function() {
-    if (checkButton.checked == false){
-      localStorage.setItem("activeFlag", "false");  
-      //alert("the button is now false")
+    if (checkButton.checked){
+      localStorage.setItem("advertisingFlag", "true"); 
+      console.log("Advertising Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("advertisingFlag"));
     }
-   
+    else{
+      localStorage.setItem("advertisingFlag", "false");
+      console.log("Advertising Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("advertisingFlag"));
+    }
   }, false);
 }, false);
 
-  document.addEventListener('DOMContentLoaded', function() {
-      if (localStorage.getItem("activeFlag") === "true"){
-        document.getElementById("activateCookieManager").checked = true; 
-        alert("The flag is true"); 
-        //alert("inside of the loop"); 
-      }
-      else{
-        //alert("the flag is false"); 
-      }
-    }, false);
-  
-//alert("FLAG: " + localStorage.getItem("activeFlag"));
-  //alert("The flag is " + localStorage.getItem("activeFlag"));
-  // EVENT HANDLER FOR CHECKING IF THE FLAGS WORK
-  /*
-      if (localStorage.getItem("activeFlag") === "true"){
-        //alert("Flag is THIS BTW "+ localStorage.getItem('activeFlag')); 
-        document.getElementById("essentialOnlyCookies").checked = true; 
-        alert("Inside of this loop"); 
-      }
+// ACTIVE ESSENTIAL BUTTON EVENT 
+document.addEventListener('DOMContentLoaded', function() {
+  var checkButton = document.getElementById('essentialOnlyCookies');
+  checkButton.addEventListener('change', function() {
+    if (checkButton.checked){
+      localStorage.setItem("essentialFlag", "true"); 
+      document.getElementById("essentialOnlyCookies").checked = true;
+      document.getElementById("allowAdvertisingCookies").disabled = true;
+      document.getElementById("allowAnalyticCookies").disabled = true;
+      document.getElementById("allowAdvertisingCookies").checked = false;
+      document.getElementById("allowAnalyticCookies").checked = false;
+      console.log("Essential Only Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("essentialFlag"));
+    }
+    else{
+      localStorage.setItem("essentialFlag", "false");
+      document.getElementById("essentialOnlyCookies").checked = false;
+      document.getElementById("allowAdvertisingCookies").disabled = false;
+      document.getElementById("allowAnalyticCookies").disabled = false;
+      console.log("Essential Only Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("essentialFlag"));
+    }
+  }, false);
+}, false);
+
+
+// TOOL IS ACTIVE 
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem("activeFlag") === "true"){ 
+      document.getElementById("activateCookieManager").checked = true;
+      document.getElementById("allowAdvertisingCookies").disabled = false;
+      document.getElementById("allowAnalyticCookies").disabled = false;
+      document.getElementById("essentialOnlyCookies").disabled = false; 
+      //---------------------------------------------------------------
+    }
+    else{
+      /*
+      localStorage.setItem("analyticFlag", "false");
+      localStorage.setItem("advertisingFlag", "false");
+      localStorage.setItem("essentialFlag", "false"); 
+      console.log("Essential Only Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("essentialFlag"));
+      console.log("Advertising Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("advertisingFlag"));
+      console.log("Analytics Button: " + checkButton.checked + " & " + "Flag: " + localStorage.getItem("analyticFlag"));
       */ 
+      
+    }
+  }, false);
 
+  // ANALYTICS IS ACTIVE 
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem("analyticFlag") === "true"){ 
+    document.getElementById("allowAnalyticCookies").checked = true;
+    //---------------------------------------------------------------
+  }
+  else{
+    document.getElementById("allowAnalyticCookies").checked = false;
+  }
+}, false);
 
+// ADVERTISING IS ACTIVE 
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem("advertisingFlag") === "true"){ 
+    document.getElementById("allowAdvertisingCookies").checked = true;
+    //---------------------------------------------------------------
+  }
+  else{
+    document.getElementById("allowAdvertisingCookies").checked = false;
+  }
+}, false);
 
+// ESSENTIAL IS ACTIVE 
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem("essentialFlag") === "true"){ 
+    //document.getElementById("activateCookieManager").checked = true;
+    document.getElementById("allowAdvertisingCookies").disabled = true;
+    document.getElementById("allowAnalyticCookies").disabled = true;
+    document.getElementById("allowAdvertisingCookies").checked = false;
+    document.getElementById("allowAnalyticCookies").checked = false;
+    document.getElementById("essentialOnlyCookies").disabled = false; 
+    document.getElementById("essentialOnlyCookies").checked = true;
+  }
+  else{
+    document.getElementById("essentialOnlyCookies").checked = false; 
+  }
+}, false);
 
   // EVENT HANDLER FOR SHOPPING MODE ACTIVATED
   document.addEventListener('DOMContentLoaded', function() {
@@ -178,39 +254,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // USE THIS LOCAL STORAGE STUFF https://dev.to/mattmarquise/implement-dark-mode-on-your-website-5c5a#demo
 
-// EVENT HANDLER ANALYTICS BUTTON
-  document.addEventListener('DOMContentLoaded', function() {
-    var checkButton = document.getElementById('analyticsCheck');
-    checkButton.addEventListener('change', function() {
-      if (checkButton.checked){
-        //let analyticsCheck = true;
-        //console.log("Analytics button = " + analyticsCheck); 
-        //alert("This works"); 
-        //alert(localStorage.getItem("flag"));
-      }
-    }, false);
-  }, false);
-
+/*
   // EVENT HANDLER FOR ESSENTIAL ONLY COOKIES BUTTON
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('essentialOnlyCookies');
     checkButton.addEventListener('change', function() {
       if (checkButton.checked){
-        let essentialCheck = true;
-        console.log("Essential Only  button = " + essentialCheck); 
+        localStorage.setItem("essentialFlag", "true");
+        //alert("Flag is " + localStorage.getItem("essentialFlag")); Debugging
+        document.getElementById("essentialOnlyCookies").checked = true;
         document.getElementById("allowAdvertisingCookies").disabled = true;
         document.getElementById("allowAnalyticCookies").disabled = true;
         document.getElementById("allowAdvertisingCookies").checked = false;
         document.getElementById("allowAnalyticCookies").checked = false;
       }
       else{
+        localStorage.setItem("essentialFlag", "false"); 
+        //alert("Flag is " + localStorage.getItem("essentialFlag")); Debugging
+        document.getElementById("essentialOnlyCookies").checked = false;
         document.getElementById("allowAdvertisingCookies").disabled = false;
         document.getElementById("allowAnalyticCookies").disabled = false;
       }
     }, false);
   }, false);
 
-  
+  */
+
   document.addEventListener('DOMContentLoaded', function() {
     var checkButton = document.getElementById('darkMode');
     checkButton.addEventListener('change', function() {
@@ -224,16 +293,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }, false);
 //document.getElementById("lpc-button").click();
 //document.getElementsByClassName("a.a8c-cookie-banner-accept-all-button").click();
+/*
+if(localStorage.getItem("advertisingFlag") === "true" && localStorage.getItem("analyticFlag") === "true"){
+  alert("This has worked now callum they aeeee")
+  //document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-accept-all-button").click();
+  document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-accept-all-button").style.backgroundColor = "#38df11";
+}
+*/ 
+/*
 
 /*
-// ACCEPT ALL  (Advertising ON, Analytics ON)
+// ACCEPT ALL  (Advertising ON, Analytics ON) **WHITELIST WEBSITE**
 setTimeout(function(){
     console.log("Clicking the accept all button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-accept-all-button").click();
 }, delay);
 
 /*
-// ANALYTICS OFF (Essential ONLY)
+// ANALYTICS OFF (Essential ONLY) **BLACKLIST WEBSITE**
 setTimeout(function(){
     console.log("Clicking the customisation button");
     document.querySelector("#wpcom-home > form > div.a8c-cookie-banner-simple-options > a.a8c-cookie-banner-customize-button").click();
@@ -264,7 +341,7 @@ setTimeout(function(){
 }, delay);
 
 */ 
-
+/*
 // DEMO MODE
 // TESTING (Will select and change the colour of the button)
 setTimeout(function(){
